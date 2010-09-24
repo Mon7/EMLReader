@@ -33,6 +33,7 @@ namespace EmlReader.WinForm
                 toBox.Text = mail.To;
                 ccBox.Text = mail.CC;
                 bccBox.Text = mail.BCC;
+                subjectBox.Text = mail.Subject;
                 bodyBox.Text = mail.TextBody;
 
                 attachmentsPanel.Controls.Clear();
@@ -87,7 +88,7 @@ namespace EmlReader.WinForm
             OpenEml(files.First());
         }
 
-        private static void EmlViewerDragEnter(object sender, DragEventArgs e)
+        private void EmlViewerDragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
         }
